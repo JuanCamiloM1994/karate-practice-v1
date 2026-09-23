@@ -2,7 +2,7 @@
 Feature: Test for the home page 
 
   Background:
-    Given url 'https://conduit-api.bondaracademy.com/api'
+    Given url apiURL
   Scenario: Get all tags
     #Given url 'https://conduit-api.bondaracademy.com/api'
     Given path 'tags'
