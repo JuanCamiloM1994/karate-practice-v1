@@ -1,0 +1,12 @@
+# Maven / Java
+/target/
+*.class
+
+# Logs
+*.log
+
+# IDEs y configuraciones de usuario (VS Code / IntelliJ)
+.vscode/
+.idea/
+*.iml
+.DS_Store
