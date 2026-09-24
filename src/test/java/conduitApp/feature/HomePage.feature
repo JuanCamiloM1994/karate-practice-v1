@@ -18,6 +18,7 @@ Feature: Test for the home page
 
 
   Scenario: Get 10 articles from the page
+    * def timeValidator = read('classpath:helpers/timeValidator.js')
     # Given param limit = 10
     # Given param offset = 0
     Given params { limit: 10, offset: 0 }
@@ -37,4 +38,24 @@ Feature: Test for the home page
     And match each response..favoritesCount == "#number"
     #null or string
     And match each response..bio == "##string" 
+    And match each response.articles == 
+    """
+     {
+            "slug": "#string",
+            "title": "#string",
+            "description": "#string",
+            "body": "#string",
+            "tagList": "#array",
+            "createdAt": "#? timeValidator(_)",
+            "updatedAt": "#? timeValidator(_)",
+            "favorited": "#boolean",
+            "favoritesCount": "#number",
+            "author": {
+                "username": "#string",
+                "bio": "##string",
+                "image": "#string",
+                "following": "#boolean"
+            }
+        }
+    """
     
