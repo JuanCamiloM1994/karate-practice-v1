@@ -33,4 +33,8 @@ Feature: Test for the home page
     And match response.articles[*].author.bio contains null
     And match response..bio contains null
     And match each response..following == false
+    And match each response..following == "#boolean"
+    And match each response..favoritesCount == "#number"
+    #null or string
+    And match each response..bio == "##string" 
     
