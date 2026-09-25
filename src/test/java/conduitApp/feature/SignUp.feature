@@ -1,3 +1,5 @@
+#Cancel the execution parallelization
+#@parallel=false
 Feature: Sign up new user
 
   Background: Preconditions
@@ -35,6 +37,7 @@ Feature: Sign up new user
             }
         }
     """
+#@parallel=false
 @WrongUser
   Scenario Outline: Validate Sign up error message
    
